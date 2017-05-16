@@ -1,0 +1,356 @@
+@font-face {
+  font-family: "Museo Sans Rounded";
+  src: url("../fonts/1b4cd06b44538d529084b3599f708643.eot");
+  /* IE9*/
+  src: url("../fonts/1b4cd06b44538d529084b3599f708643.eot?#iefix") format("embedded-opentype"), url("../fonts/1b4cd06b44538d529084b3599f708643.woff2") format("woff2"), url("../fonts/1b4cd06b44538d529084b3599f708643.woff") format("woff"), url("../fonts/1b4cd06b44538d529084b3599f708643.ttf") format("truetype"), url("../fonts/1b4cd06b44538d529084b3599f708643.svg#Museo Sans W01 Rounded 300") format("svg");
+  /* iOS 4.1- */
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Museo Sans Rounded";
+  color: #fff;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-centerY-centerX {
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.page-wrapper {
+  height: 100%;
+  display: table;
+}
+
+.page-wrapper .page-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.el-wrapper {
+  width: 360px;
+  height: 360px;
+  margin: 15px auto;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .el-wrapper {
+    width: 345px;
+  }
+}
+
+@media (max-width: 767px) {
+  .el-wrapper {
+    width: 290px;
+    height: 290px;
+    margin: 30px auto;
+  }
+}
+
+.el-wrapper .main-image {
+  -webkit-transition: transform 0.8s;
+  -o-transition: transform 0.8s;
+  transition: transform 0.8s;
+}
+
+.el-wrapper .main-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.el-wrapper .main-content:before {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.64);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: all 1s cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition: all 1s cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition: all 1s cubic-bezier(0, 0.655, 0.355, 1);
+  transition: all 1s cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+}
+
+.el-wrapper .info-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.el-wrapper .product-name {
+  margin-top: 100px;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .el-wrapper .product-name {
+    margin-top: 80px;
+  }
+}
+
+.el-wrapper .more-info-btn {
+  display: inline-block;
+  position: relative;
+  top: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+}
+
+.el-wrapper .more-info-btn:before {
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  width: 0;
+  height: 1px;
+  content: "";
+  display: block;
+  background-color: #FFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.el-wrapper:hover .main-image {
+  -webkit-filter: blur(3px);
+  -o-filter: blur(3px);
+  filter: blur(3px);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: transform 2.5s;
+  -o-transition: transform 2.5s;
+  transition: transform 2.5s;
+}
+
+.el-wrapper:hover .main-content:before {
+  opacity: 1;
+}
+
+.el-wrapper:hover .product-name {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.el-wrapper:hover .more-info-btn {
+  top: 0;
+  opacity: 1;
+}
+
+.el-wrapper:hover .more-info-btn:hover:before {
+  width: 100%;
+}
+
+.el-wrapper:hover .buy-btn-text {
+  opacity: 1;
+  top: 0;
+}
+
+.el-wrapper:hover .line-top {
+  left: 0;
+  -webkit-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.el-wrapper:hover .line-right {
+  bottom: 0;
+  -webkit-transition-delay: 0.45s;
+  -o-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+
+.el-wrapper:hover .line-bottom {
+  left: 0;
+  -webkit-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+
+.el-wrapper:hover .line-left {
+  top: 0;
+  -webkit-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.buy-btn {
+  margin-top: 80px;
+  display: inline-block;
+  padding: 13px 18px;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+}
+
+@media (max-width: 767px) {
+  .buy-btn {
+    margin-top: 60px;
+  }
+}
+
+.buy-btn:hover {
+  background: #fff;
+  text-decoration: none;
+}
+
+.buy-btn:hover .buy-btn-text {
+  color: #464646;
+}
+
+.buy-btn .buy-btn-text {
+  position: relative;
+  top: 15px;
+  opacity: 0;
+  color: #fff;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  transition-timing-function: cubic-bezier(0, 0.655, 0.355, 1);
+  /* custom */
+}
+
+.buy-btn .line-top {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  background: white;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.buy-btn .line-right {
+  position: absolute;
+  bottom: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: white;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.buy-btn .line-bottom {
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: white;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.buy-btn .line-left {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: white;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}

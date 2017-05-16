@@ -1,0 +1,306 @@
+@font-face {font-family: "Museo Sans Rounded";
+  src:  url("../fonts/1b4cd06b44538d529084b3599f708643.eot"); /* IE9*/
+  src:  url("../fonts/1b4cd06b44538d529084b3599f708643.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+			  url("../fonts/1b4cd06b44538d529084b3599f708643.woff2") format("woff2"), /* chrome、firefox */
+			  url("../fonts/1b4cd06b44538d529084b3599f708643.woff") format("woff"), /* chrome、firefox */
+			  url("../fonts/1b4cd06b44538d529084b3599f708643.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+			  url("../fonts/1b4cd06b44538d529084b3599f708643.svg#Museo Sans W01 Rounded 300") format("svg"); /* iOS 4.1- */
+			}
+@mixin transitionEaseOutExpo($type, $time) {
+
+-webkit-transition: $type $time cubic-bezier(0.000, 0.655, 0.355, 1.000); 
+   -moz-transition: $type $time cubic-bezier(0.000, 0.655, 0.355, 1.000); 
+     -o-transition: $type $time cubic-bezier(0.000, 0.655, 0.355, 1.000); 
+        transition: $type $time cubic-bezier(0.000, 0.655, 0.355, 1.000); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.000, 0.655, 0.355, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.000, 0.655, 0.355, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.000, 0.655, 0.355, 1.000); 
+        transition-timing-function: cubic-bezier(0.000, 0.655, 0.355, 1.000); /* custom */
+}
+
+@mixin transitionLinear($type, $time) {
+	-webkit-transition: $type $time;
+	-o-transition: $type $time;
+	transition: $type $time;
+}
+
+@mixin transitionDelay($delayTime) {
+	-webkit-transition-delay: $delayTime;
+	-o-transition-delay: $delayTime;
+	transition-delay: $delayTime;
+}
+
+@mixin rotate($degrees) {
+	-webkit-transform: rotate($degrees);
+	-ms-transform: rotate($degrees);
+	-o-transform: rotate($degrees);
+	transform: rotate($degrees);
+}
+
+@mixin scale($scale) {
+	-webkit-transform: scale($scale);
+	-ms-transform: scale($scale);
+	-o-transform: scale($scale);
+	transform: scale($scale);
+}
+
+html,
+body {
+	height: 100%;
+	font-family: "Museo Sans Rounded";
+	color: #fff;
+}
+
+.d-flex {
+	display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-centerY-centerX {
+	justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+$mobile: 767px;
+$tablet: 991px;
+
+body {
+	background-color: #f7f7f7;
+}
+
+
+.page-wrapper {
+	height: 100%;
+	display: table;
+
+	.page-inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.el-wrapper {
+	width: 360px;
+	height: 360px;
+	margin: 15px auto;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+
+	@media (max-width: $tablet) {
+    width: 345px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 290px;
+    height: 290px;
+    margin: 30px auto;
+  }
+	
+	.main-image {
+		@include transitionLinear(transform, 0.8s);
+	}
+
+	.main-content {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		&:before {
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.64);
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			@include transitionEaseOutExpo(all, 1s);
+		}
+	}
+
+	.info-wrapper {
+		position: relative;
+		z-index: 1;
+	}
+
+	.product-name {
+		margin-top: 100px;
+		@include scale(1.5);
+		@include transitionEaseOutExpo(all, 0.3s);
+		opacity: 0;
+
+		@media (max-width: $mobile) {
+			margin-top: 80px;
+		}
+	}
+
+	.more-info-btn {
+		display: inline-block;
+		position: relative;
+		top: 30px;
+		color: #fff;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 12px;
+		font-weight: 700;
+		opacity: 0;
+		@include transitionEaseOutExpo(all, 0.3s);
+
+		&:before {
+			@include transitionEaseOutExpo(all, 0.3s);
+			width: 0;
+			height: 1px;
+			content: "";
+			display: block;
+			background-color: #FFF;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	&:hover {
+		.main-image {
+			-webkit-filter: blur(3px);
+			-o-filter: blur(3px);
+			filter: blur(3px);
+			@include scale(1.2);
+			@include transitionLinear(transform, 2.5s);
+		}
+
+		.main-content:before {
+			opacity: 1;
+		}
+
+		.product-name {
+			@include scale(1);
+			opacity: 1;
+		}
+
+		.more-info-btn {
+			top: 0;
+			opacity: 1;
+
+			&:hover {
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+
+		.buy-btn-text {
+			opacity: 1;
+			top: 0;
+		}
+
+    .line-top{
+      left:0;
+			@include transitionDelay(0.15s);
+    }
+
+    .line-right{
+      bottom: 0;
+			@include transitionDelay(0.45s);
+    }
+
+    .line-bottom{
+      left: 0;
+			@include transitionDelay(0.35s);
+    }
+
+    .line-left{
+      top: 0;
+			@include transitionDelay(0.25s);
+    }
+	}
+}
+
+.buy-btn {
+	margin-top: 80px;
+	display: inline-block;
+	padding: 13px 18px;
+	background: transparent;
+	overflow: hidden;
+	position: relative;
+	@include transitionEaseOutExpo(all, 0.3s);
+
+	@media (max-width: $mobile) {
+    margin-top: 60px;
+  }
+
+	&:hover {
+		background: #fff;
+		text-decoration: none;
+
+		.buy-btn-text {
+			color: #464646;
+		}
+	}
+
+	.buy-btn-text {
+		position: relative;
+		top: 15px;
+		opacity: 0;
+		color: #fff;
+		@include transitionEaseOutExpo(all, 0.3s);
+	}
+
+	.line-top {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,1);
+		@include transitionLinear(all, 0.1s);
+		@include transitionDelay(0.3s);
+  }
+
+  .line-right{
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(255,255,255,1);
+		@include transitionLinear(all, 0.1s);
+	}
+
+	.line-bottom{
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,1);
+		@include transitionLinear(all, 0.1s);
+		@include transitionDelay(0.1s);
+  }
+
+  .line-left{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(255,255,255,1);
+		@include transitionLinear(all, 0.1s);
+		@include transitionDelay(0.2s);
+  }
+} 
